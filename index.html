@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Adaption from a theme made by www.w3schools.com - No Copyright -->
+  <!-- Adapted by Tiago França-->
+  <title>2013 Brazilian Protest Gold Standard DataSet</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="page-content/style.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript" src="page-content/script.js"></script>
+
+</head>
+<body ng-app="">
+
+<!-- Navbar -->
+<nav class="navbar navbar-default w3-border w3-card-4"" data-spy="affix" data-offset-top="200"">
+  <div class="container">
+    <div class="navbar-header" id="navbar-header">
+    <!--
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     -->
+      <a class="navbar-brand w3-xlarge text-space btn btn-default" href="#navbar-header">Home <i class="fa fa-home"></i></a>
+      <a class="btn btn-link git" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests">source<img src="page-content/git-ico.png"/></a>
+      
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="menu"><a href="#gold-div" class="w3-ripple w3-border w3-border-gray w3-round-xlarge">Introduction</a></li>
+        <li class="menu"><a href="#content-div" class="w3-ripple w3-border w3-border-blue-gray w3-round-xlarge">Dataset Informations</a></li>
+        <li class="menu"><a href="#preparation-div" class="w3-ripple w3-border w3-border-gray w3-round-xlarge">Download and Preparation</a></li>
+        <li class="menu"><a href="#ref-license-div" class="w3-ripple w3-border w3-border-gray w3-round-xlarge">Reference, License and Contact</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="w3-container w3-teal container-fluid-2 bg-1 text-center" id="gold-div">
+
+  <div class="w3-display-container">
+      <img src="page-content/img-topo.jpg" class="w3-image  " style="display:inline" alt="#vemprarua" width="2000">
+      <div class="w3-display-topmiddle w3-container">
+        <h1 class="titulo-pag">Brazilian Protest 2013, the Gold Standard Dataset</h1>
+      </div>
+  </div>
+  
+  <h4 class="margin-side text-alignment-1 margin-top">This page presents a sentiment-annotated Twitter gold standard dataset for the Brazilian protests in 2013. The dataset consists of 4,422 messages (tweets) annotated by three raters with information about the sentiment expressed in the messsages. This is a valuable resource for social media-based sentiment analysis in the context of protests events. Besides the gold standard dataset, we are also provide the raw dataset as eight files of tweets IDs and a python script for retrieve the tweets.</h4>
+  
+  
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="w3-container container-fluid bg-2 text-center" ng-include="'goldendataset.html'" id="content-div">    
+<!--importo o conteudo de goldendataset.html usando angular-->
+</div>
+<div class="container-fluid bg-3" id="preparation-div">    
+  <h3 class="margin text-center">Download and Preparation</h3>
+  
+    <h4 class="margin-top margin-dataset-informations">Preparation</h4>
+    <p>You will need to prepare a some things (a few configurations):</p>
+    
+    <ol>
+        <li>Install a python 2.7 interpreter and the pip package management.</li> 
+        <li>Clone the repository<code>git clone https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests.git</code> or <a style="font-weight:bold" class="w3-text-blue" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/archive/master.zip">download</a> it.</li>
+        <li>Now, into your local repository</li>
+        <li>Install some dependencies (libs): <code>Install required dependecies: pip install -r dependencies.txt --upgrade</code></li>
+        <li>Create or use a <a style="font-weight:bold" class="w3-text-blue" href="https://apps.twitter.com/app/new">Twitter App credentials (a read-only Access Token)</a> and then fill appropriately the <span class="w3-yellow">"__main__"</span> in the end of the recoveryTweetsById.py</li>
+    </ol>
+    
+    <div class="row margin-dataset-informations">
+    <div class="col-sm-4">
+      <h5 style="text-align:center; font-weight:bold;">Some details about the gold standard dataset</h5>
+      <p style="text-align: justify; text-indent: 2.5%;">The tweets in the dataset received either "P", "N" or "NN" labels for Positive, Negative or Neutral messages, respectively. The gold standard is a csv file with: tweets' IDs (first column), the annotation of the raters (columns 2, 3 and 4) and the consolidation result is in column 5. The first line has the informations about the license and the second the fields names. <span style="font-weight:bold" class="w3-text-green">Using the python script provided by us, you can retrive the dataset messages.</span> However, if you want see see the csv dataset file, <a class="w3-text-blue" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/blob/master/GoldStandardDataSet.csv">visit the source on git hub</git>. We have followed the <a class="w3-text-green" href="https://dev.twitter.com/overview/terms/agreement-and-policy">Twitter’s Terms of Service.</a> </p>      
+    </div>
+    <div class="col-sm-4"> 
+        <h5 style="text-align:center; font-weight:bold;">The python script to retrieval tweets</h5>
+        <p style="text-align: justify; text-indent: 2.5%;">That script is a python 2.7 script that can be seen <a href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/blob/master/recoveryTweetsById.py" class="w3-text-blue">here</a>. You should just to follow the instructions above: create Twitter credentials, copy and paste the credentials in the appropriate fields and run. </p>
+      
+    </div>
+    <div class="col-sm-4">
+      <h5 style="text-align:center; font-weight:bold;">Som raw dataset details</h5>
+      <p style="text-align: justify; text-indent: 2.5%;">The raw dataset is a set of csv files (<a class="w3-text-blue" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/tree/master/rawDataSet">click here to see the files</a>). Those files have just the tweets' IDs. In order to retrieval the tweets, you should adapt the python script in the "__main__" to read such files and save the tweets. We have followed the <a class="w3-text-green" href="https://dev.twitter.com/overview/terms/agreement-and-policy">Twitter’s Terms of Service.</a></p>     
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-5" id="ref-license-div">    
+  <h3 class="margin text-center">References, License and Contacts</h3>
+  <div class="row" style="margin-left:20px;margin-right:20px;margin-top:20px;"> 
+    <h4 class="margin-top margin-dataset-informations" style="font-weight:bold;"> REFERENCE</h4>   
+    <p style="text-indent: 2.5%;">Please cite <code>França, Gomes and Oliveira 2017</code> or <code> França et al. 2017</code> in all publications using this dataset (reference bellow).</p>
+    <p style="text-indent: 2.5%;">Link da versão final. ARTIGO PARA SER CITADO. POR FAVOR CITE ESTE.</p>
+  
+    <h4 class="margin-dataset-informations" style="margin-top:0;padding-top:0;"> Previous work</h4>
+    <p style="text-indent: 2.5%;">FRANCA, T. ; Oliveira, Jonice . Análise de Sentimento de Tweets Relacionados aos Protestos que ocorreram no Brasil entre Junho e Agosto de 2013. In: III Brazilian Workshop on Social Network Analysis and Mining (BraSNAM), 2014, Brasilia. Anais do Congresso da Sociedade Brasileira de Computação. Porto Alegre: SBC, 2014. <a href="https://drive.google.com/file/d/0B44dYSal0apGNjFBZjRqaGwxTEU/view">[pdf]</a></p>
+     <h4 class="margin-dataset-informations"> <a style="font-weight:bold;" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/blob/master/LICENSE.txt">LICENSE</a></h4>
+    <p style="text-indent: 2.5%;">The software and the annotations is available under the business-friendly <a style="font-weight:bold;" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/blob/master/LICENSE.txt">BSD 2 license</a>. So, you can to use the software for any purpose such as to distribute it, to modify it, and to distribute modified versions of the software, including closed-source, under the terms of the license, without concern for royalties.</p>
+    
+    <h4 class="margin-dataset-informations"> <a style="font-weight:bold;" href="https://github.com/tcruzfranca/annotatedDatasetBrazilianProtests/blob/master/LICENSE.txt">CONTACT</a></h4>
+    <p style="text-indent: 2.5%;">For questions about this repository, the data set and annotations, or any other general question you are welcome to Tiago França by e-mail (tcruzfranca in gmail) or send a message by github.</p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Theme adapted by Tiago Cruz de França</p>
+  <p class="p-credits">This theme is an adaptation from Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+</footer>
+
+</body>
+</html>
+

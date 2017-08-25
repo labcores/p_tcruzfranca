@@ -1,0 +1,293 @@
+<h2 class="margin">Dataset Informations</h2>
+<div class="w3-row ">
+  <a href="javascript:void(0)" class="dataset" onclick="openCity2(event, 'GoldStandard');">
+    <div class="w3-third tablink w3-bottombar w3-border-green">Gold Standard Dataset</div>
+  </a>
+  <a href="javascript:void(0)" class="dataset" onclick="openCity2(event, 'Annotations');">
+    <div class="w3-third tablink w3-bottombar ">Annotations</div>
+  </a>
+  <a href="javascript:void(0)" class="dataset" onclick="openCity2(event, 'raw-dataset');">
+    <div class="w3-third tablink w3-bottombar">Events Description and the Raw Dataset</div>
+  </a>
+</div>
+
+<div id="GoldStandard" class="w3-container gold">
+    <h4 class="margin-top margin-dataset-informations">The Gold Standard Dataset</h4>
+    <p>The gold standard is the consolidation of <a href="javascript:void(0)" class="dataset" style="font-weight:bold;" onclick="openCity2(event, 'Annotations');">the three raters' annotations</a>. That consolidation procedure follows two steps. We use 1) a majority vote for the sentiment, and 2) when the raters disagreed entirely (each one assigned three different sentiments to a tweet), then the decision was assign the tweet as neutral. The final results are in the tables and the image bellow.</p>
+    <p><a href="#ref-license-div" class="dataset w3-text-yellow" style="font-weight:bold;"><i class="material-icons">arrow_forward</i>&emsp;&ensp;For a more detailed discussion, please see our paper.</a> </p>
+    <p><a href="#preparation-div" class="dataset w3-text-orange" style="font-weight:bold;"><i class="material-icons">arrow_forward</i>&emsp;&ensp; Click here in order to download or understand the dataset details.</a></p>
+    
+  <div class="row" style="margin-top:40px;">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-5">
+      <p style="font-weight:bold; text-align:center;">Gold Standard Dataset - consolidation of <a href="javascript:void(0)" class="dataset" style="font-weight:bold;" onclick="openCity2(event, 'Annotations');">raters' annotations</a></p>
+
+      <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+        <thead>
+          <tr class="w3-green">
+            <th></th>
+            <th>Consolidation</th>
+            <th>%</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Positive</td>
+          <td>1752</td>
+          <td>~40%</td>
+        </tr>
+        <tr>
+          <td>Negative</td>
+          <td>198</td>
+          <td>~4%</td>
+        </tr>
+        <tr>
+          <td>Neutral</td>
+          <td>2472</td>
+          <td>~56%</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px;">Total of Labeled Messages (#)</td>
+          <td colspan="2">4422</td>      
+        </tr>
+      </table>
+  </div>
+ 
+  <div class="col-sm-5">  
+    <div >
+        <img class="consol-pie-img" src="page-content/graf-GoldStandard.png" />  
+        <p style="font-weight:bold; margin-left:10%;">Consolidation Result (#total 4422 messages)</p>
+    </div>
+  </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row" style="margin-top:25px;">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <p style="font-weight:bold; text-align:center;">Inter-rate agreement among annotators (<a href="javascript:void(0)" class="dataset" style="font-weight:bold;" onclick="openCity2(event, 'Annotations');">raters' annotations</a>)</p>
+        
+        <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+            <thead>
+              <tr class="w3-green">                
+                <th>Statistic inter-rater agreement</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Fleiss’ Kappa</td>
+              <td>73%</td>
+
+            </tr>
+            <tr>
+              <td>Krippendorff’s alpha</td>
+              <td>65%</td>
+            </tr>
+          </table>
+      </div>
+      <div class="col-sm-2"></div>
+  </div>
+</div>
+
+  <div id="Annotations" class="w3-container gold " style="display:none" >
+    <h4 class="margin-top margin-dataset-informations">Annotations</h4>
+    <p>Three human volunteers raters classifed a sample of 4,422 tweets. The sample was build upon the <a href="javascript:void(0)" class="dataset" style="font-weight:bold;" onclick="openCity2(event, 'raw-dataset');">raw dataset</a> which contained more than 400,000 messages. Before to start the annotation task, each annotator received basics explanations related to both “why” and “when” the dataset was build. Then, the following two explanations were presented. The first one concerned to the motivation which was to understand how the activists and population express their opinions (or sentiment) in the social media, manly in Twitter. The second is related to the period of data retrieval that to occur during the manly Brazilian protests events in 2013.</p>
+    <p>The aim was to classify if the opinion expressed in the messages was in some way positive or negative about the protests. To do that, we have defined a <span style="font-weight:bold;">key question</span> as a guide for the classification task. The question is <span style="font-weight:bold;">“the tweet text expresses an opinion of agreement (positive), disagreement (negative) or neither (neutral) to the protests?”</span>. The answer should be just one to be assigned to the message. Thus, the annotators judged whether a message expresses an opinion in favor (positive) or against (negative) the protests. If a classifier judges that a message did not express a positive or negative opinion for any reason, that message should be considered neutral. In other words, we have defined <span style="font-weight:bold;">three (answers) classes: positive, negative or neutral.</span> The table bellow shows examples of tweets messages from the dataset.</p>
+  <div class="row" style="margin-top:40px;">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+  <p style="font-weight:bold; text-align:center;">Examples of tweets and annotations assigned</p>
+
+      <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+        <thead>
+          <tr class="w3-green">
+            <th></th>
+            <th>Tweet text</th>
+            <th>Assigned sentiment</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>1</td>
+          <td>Falta de leitos nos hospitais públicos leva milhares de pacientes recorrem ao Ministério Público para se tratarem #VempraRua #SOSSUS</td>
+          <td>Positive</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Cara, desisto de fazer vocês entenderem. Não adianta ficar nessa mobilização " #mudabrasil" sem propôr mudanças reais.</td>
+          <td>Negative</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>O pau comendo em várias cidades do Brasil e o Fantástico começa com música feliz, falando sobre a Copa das Confederações. #protestorj</td>
+          <td>Neutral</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Convoco lutadores de Jiu-Jitsu e Muay Thai a participar dos protestos para dar surra nos baderneiros e saqueadores de lojas. #mudabrasil</td>
+          <td>Negative (it received two negative and one positive assignment)</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>A torcida continuou cantando o hino nacional, mas n foi p fazer bonito para a rede Globo e sim p mostrar sua forca! #OGiganteAcordou</td>
+          <td>Neutral (received the three possible sentiments annotations)</td>
+        </tr>
+      </table>
+   </div>
+   <div class="col-sm-1"></div>
+  </div>
+    <p>We should note that the annotation task have started eight month after the protests events. In the first moment, just a pilot was built with 200 messages <a href="#pilot-paper" style="font-weight:bold;">[França and Oliveira, 2014]</a>. After that, the sample was built in a random way taking 1% of messages to each day of the raw data set. We also assume a minimum of one message per day if the 1% represents a value less than one. The entire labeled data set was then finished one and half year later of the protests. That approach enables us to take some feedbacks such as the major of the messages were in Brazilian Portuguese. Furthermore, we could also take some inter-rater agreement measures among the annotators. The following tables summarize the result of annotations task and ageement rate.</p> 
+    <p><a href="#preparation-div">Download the Gold Standard Dataset.</a> See also the paper which describe both datasets and the BSD 2-Clause License. </p>
+    
+  <div class="row" style="margin-top:40px;">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-5">
+      <p style="font-weight:bold; text-align:center;">Rating among annotators and classes</p>
+
+      <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+        <thead>
+          <tr class="w3-green">
+            <th>Classes</th>
+            <th>rater-1</th>
+            <th>rater-2</th>
+            <th>rater-3</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Positive</td>
+          <td>1,786</td>
+          <td>1,723</td>
+          <td>1,945</td>
+        </tr>
+        <tr>
+          <td>Negative</td>
+          <td>191</td>
+          <td>277</td>
+          <td>294</td>
+        </tr>
+        <tr>
+          <td>Neutral</td>
+          <td>2,445</td>
+          <td>2,422</td>
+          <td>2,183</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px;" colspan="3">Total of Labeled Messages (#)</td>
+          <td>4422</td>      
+        </tr>
+      </table>
+  
+  </div>
+        
+      <div class="col-sm-5">
+         <p style="font-weight:bold; text-align:center;">Agreement among the annotators (raters)</p>
+
+      <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+        <thead>
+          <tr class="w3-green">
+            <th></th>
+            <th># tweets</th>
+            <th>%</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Unanimous sentiment</td>
+          <td>3,449</td>
+          <td>~ 78%</td>         
+        </tr>
+        <tr>
+          <td>Two sentiments</td>
+          <td>936</td>
+          <td>~ 21%</td>
+        </tr>
+        <tr>
+          <td>Three sentiments</td>
+          <td>37</td>
+          <td>~ 1 %</td>
+        </tr>
+        <tr>
+          <td style="font-size:13px;">Total</td>
+          <td>4422</td>
+          <td>100%</td>
+        </tr>
+      </table>
+      </div>
+      <div class="col-sm-1"></div>
+  
+  </div>
+    
+    
+  </div>
+
+  <div id="raw-dataset" class="w3-container gold" style="display:none">
+    <h4 class="margin-top margin-dataset-informations">Event Description</h4>
+    <p>The figure bellow summarizes events occurred during Jun 1 and Jul 31, 2013. We have focused in that interval because during these months the protests were more intense. The summarization is presented as a timeline and the informations was bases in [Brazil 2013]. In a first moment, marchers complain about the rises in public transport fares. Motivated by the large proportion of protesters and police clash, and just after the demonstrations gain attention in social media, Brazilian major media published somethings the events. It is important to highlight that from the 15th until 30th of June, Brazil hosted the FIFA Confederations Cup and the World Youth Days from 23th to 28th of July.</p>
+     <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config" >
+        <thead>
+          <tr class="w3-white">
+            <th style="text-align: justify;">#acordabrasil, #vemprarua, #ForaFifa, #ogiganteacordou, #anonymousbrazil, #MPL, #passelivre, #pec37, #mudabrasil, #ChangeBrazil, #anonymousbrazil, #protesto, #foradilma, #protestorj, #protestabrasil, #primaverabrasileira, #forafeliciano, #ocupa, #copapraquem, #protest, #pec33, #pec99</th>            
+          </tr>          
+        </thead>
+        <tr>Hashtags used to retrieve Twitter’s messages</tr>
+    </table>
+    <p>After some demonstrations in the Brazilian streets, the amount of claim became confused. Besides ticket transport prices, the folks also demonstrated their disappointed about government corruption, legislative proposals (e.g. PEC 37) and the large expenses concerned with events that were to be held in the country. There was no official social leadership neither political party leading the protests during Brazilian protests. Therefore, a group named Anonymous Brazil published a video suggesting five main claims. We highlighted two of them. First of all Anonymous proposed the rejection of the proposed amendment to the Brazilian constitution known as PEC 37 which intended forbid any investigations by the federal public ministry. The PEC 37 was understood as facilitation to politicians leave without pay for their corruption. Second, they suggested starting an investigation for verifying irregularities related to money spent with infrastructure for FIFA World Cup that would be in 2014.</p>
+   
+    <div class="row" style="margin-top:40px;">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-5">
+        <div class="w3-display-container w3-text-white">      
+            <img class="" src="page-content/timeLine.png" />
+            <p style="font-weight:bold;" class="w3-display-bottommiddle w3-container">The Timeline of the main events during the Brazilian protests, 2013</p>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+   </div>
+    <h4 class="margin-top margin-dataset-informations">The Raw Dataset Description</h4>
+    <p>Regarding to data collecting, we used the Twitter’s API during the Brazilian protests between Jun 1 and Jul 31, 2013 (inclusive). In order to coverage posts related to the protests, we utilized 22 hashtags used by activists which are presented in the list bellow. The criteria for chosen those hashtags was based on the manual identification of common keywords associated with the protests events in Brazil during that period.</p>
+    
+    <p>Each tweet returned by the API as a JSON representation. That JSON comprises all matadata provided by Twitter. Those metadata include, for example, data about the user that published the message, a timestamp, possibly a geolocation, and so on. Those tweets former a raw data set with 432,975 messages published by 180,005 different users (approximately 2.41 tweets per user). The informations about the raw data set are summarized in the table bellow. The next figure depicts the frequency of tweets per day between the Jun 1 and Jul 31, 2013. We should point out that most messages were written in Brazilian Portuguese language.</p>
+    <p><a href="#ref-license-div" style="font-weight:bold;">Download the raw data set.</a></p>
+  <div class="row" style="margin-top:40px;">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+      <p style="font-weight:bold; text-align:center;">Rating among annotators and classes</p>
+
+      <table class="w3-table-all w3-hoverable w3-border table table-bordered table-config">
+        <thead>
+          <tr class="w3-green">
+            <th></th>
+            <th># Amount</th>
+            
+          </tr>
+        </thead>
+        <tr>
+          <td>Total of messages</td>
+          <td>432,975</td>
+
+        </tr>
+        <tr>
+          <td>Total of users</td>
+          <td>180,005 (average of ~2.41 messages per user)</td>
+
+        </tr>
+        <tr>
+          <td>Period of data collect</td>
+          <td>61 days (from Jun 1 up to Jul 31, 2013)</td>
+
+        </tr>
+
+      </table>
+  
+  </div>
+  <div class="col-sm-3"></div>
+  </div>
+  
+  <div class="row" style="margin-top:40px;">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="w3-display-container w3-text-white">      
+            <img style="width:100%" src="page-content/freqTweets-raw-dataset.png" />
+            <p style="font-weight:bold; text-align:center;">Frequency of Tweets per Day</p>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+   </div>
+  
+</div>
