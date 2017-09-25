@@ -1,4 +1,6 @@
 # annotatedDatasetBrazilianProtests
+
+Visit the site. In it you see a more detailed description about the dataset: https://labcores.github.io/p_tcruzfranca/
 This page includes:
   One file with tweet IDs and the classification of the tweets as positive, negative or neutral.
     Each message was classified by 3 humans. Each human classification is in the file. Each line has the tweet ID, 
